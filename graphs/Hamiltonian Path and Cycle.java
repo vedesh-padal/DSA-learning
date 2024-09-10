@@ -83,3 +83,55 @@ class Hamiltonian {
   }
 }
 
+
+
+
+// GFG QUESTION, HAMILTONIAN PATH EXISTS?
+class Solution {
+
+  boolean check(int N, int M, ArrayList<ArrayList<Integer>> Edges) {
+    // code here
+    ArrayList<Integer>[] graph = new ArrayList[N + 1];
+    // becoz, 1 based indexing
+    for (int i = 0; i <= N; i++)
+      graph[i] = new ArrayList<>();
+
+    for (ArrayList<Integer> edge : Edges) {
+      int v1 = edge.get(0);
+      int v2 = edge.get(1);
+      graph[v1].add(v2);
+      graph[v2].add(v1);
+    }
+
+    HashSet<Integer> visited = new HashSet<>();
+
+    for (int i = 1; i <= N; i++) {
+      if (dfs(graph, i, visited, N))
+        return true;
+    }
+    return false;
+  }
+
+  // psf = path so far
+  private static boolean dfs(ArrayList<Integer>[] graph, int src,
+      HashSet<Integer> visited, int n) {
+
+    // here instead of taking boolean array for visited, we avoided O(n)
+    // for checking if all nodes are visited
+    visited.add(src);
+
+    // number of nodes => all nodes must be visited, then we return true
+    if (visited.size() == n) {
+      return true;
+    }
+
+    for (int nbr : graph[src]) {
+      if (visited.contains(nbr) == false) {
+        if (dfs(graph, nbr, visited, n))
+          return true;
+      }
+    }
+    visited.remove(src); // after visiting all neighbours, we backtrack
+    return false;
+  }
+}
