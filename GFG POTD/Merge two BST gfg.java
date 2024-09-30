@@ -7,7 +7,6 @@
 // NOT null node will be used as the node of the new tree.
 
 // Return the merged tree.
-
 // Note: The merging process must start from the root nodes of both trees.
 
 class TreeNode {
