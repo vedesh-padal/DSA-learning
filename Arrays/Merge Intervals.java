@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 class MergeIntervals  {
   public static int[][] mergeIntervals(int[][] arr) {
@@ -35,16 +32,18 @@ class MergeIntervals  {
 
     }
 
-    int len = al.size();
+    // int len = al.size();
 
-    int[][] ans = new int[len][2];
+    // int[][] ans = new int[len][2];
 
-    for (int i=0; i<len; i++) {
-      ans[i][0] = al.get(i).get(0);
-      ans[i][1] = al.get(i).get(1);
-    }
+    // for (int i=0; i<len; i++) {
+    //   ans[i][0] = al.get(i).get(0);
+    //   ans[i][1] = al.get(i).get(1);
+    // }
 
-    return ans;
+    // return ans;
+
+    return al.toArray(new int[al.size()][2]);
 
   }
 
