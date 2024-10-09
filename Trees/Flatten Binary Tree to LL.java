@@ -1,17 +1,6 @@
-import java.util.Stack;
+package trees;
 
-class TreeNode {
-  int val;
-  TreeNode left;
-  TreeNode right;
-  TreeNode() {}
-  TreeNode(int val) { this.val = val; }
-  TreeNode(int val, TreeNode left, TreeNode right) {
-    this.val = val;
-    this.left = left;
-    this.right = right;
-  }
-}
+import java.util.Stack;
 
 class Solution {
   // APPROACH - 1: MOVE COMPLETE RIGHT AND JOIN WITH PREV
