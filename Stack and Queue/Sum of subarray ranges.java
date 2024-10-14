@@ -155,6 +155,7 @@ class Solution {
       pgee[i] = (stk.isEmpty()) ? -1 : stk.peek();
 
       stk.push(i);
+      
     }
     return pgee;
   }
