@@ -9,8 +9,8 @@
 // AND of every combination of numbers of candidates. Each number in candidates
 // may only be used once in each combination.
 
-// Return the size of the largest combination of candidates with a bitwise AND
-// greater than 0.
+// Return the size of the largest combination of candidates with 
+// a bitwise AND greater than 0.
 
 // Example 1:
 // Input: candidates = [16,17,71,62,12,24,14]
