@@ -31,7 +31,7 @@ class Solution {
 
   public void connect(Node root) {
     
-    // LEVEL ORDER TRAVERSAL
+    // LEVEL ORDER TRAVERSAL 
     Queue<Node> q = new LinkedList<>();
     q.add(root);
 

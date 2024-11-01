@@ -15,7 +15,7 @@ class Solution {
     root.right = prev;
     root.left = null;
     prev = root;
-  }
+}
 
   // ITERATIVE APPROACH - using stack
   public void flattenIterative(TreeNode root) {
