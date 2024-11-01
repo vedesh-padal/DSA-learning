@@ -29,6 +29,26 @@ import java.util.ArrayList;
 
 class Solution {
 
+
+  // Naive approach is to:
+  // stand at each index starting from left
+  // and count no. of less than elements to the right
+  // O(n^2) time, O(1) space
+
+
+  // O(NlogN) time, O(n) space
+  // INTUITITON:
+  // We can use merge sort to count the inversions in an array, First, we divide
+  // the array into two halves: a left half and a right half. Next, we recursively
+  // count the inversions in both halves. While merging the two halves back
+  // together, we also count how many elements from the left half array are
+  // greater than elements from the right half array, as these represent cross
+  // inversions (i.e, element from the left half of the array is greater than an
+  // element from the right half during the merging process in the merge sort
+  // algorithm). Finally, we sum the inversions from the left half, right half,
+  // and the cross inversions to get the total number of inversions in the array.
+  // This approach efficiently counts inversions while sorting the array.
+
   private static long merge(long[] arr, int low, int mid, int high) {
     ArrayList<Long> temp = new ArrayList<>();
 
