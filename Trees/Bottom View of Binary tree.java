@@ -13,6 +13,16 @@ class Pair {
   }
 }
 
+class Node {
+  int data;
+  Node left, right;
+  Node(int data) {
+    this.data = data;
+    this.left = null;
+    this.right = null;
+  }
+}
+
 class Solution {
 
   private void bottomView(int vInd, int currLevel, Node root, Map<Integer, Pair> tmap) {

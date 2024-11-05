@@ -25,8 +25,8 @@ class Solution {
         else if (right == null)
             return left;
 
-        // when both left and right have node other than null, we to return the current
-        // node
+        // when both left and right have node other than null, 
+        // we to return the current node
         else
             return root;
     }
