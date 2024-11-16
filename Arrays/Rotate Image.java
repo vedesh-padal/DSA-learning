@@ -28,6 +28,7 @@ class Solution {
 
     int n = matrix.length;
 
+    // Transpose the matrix
     for (int i = 0; i < n; i++) {
       for (int j = i; j < n; j++) {
         int temp = matrix[i][j];
@@ -36,6 +37,7 @@ class Solution {
       }
     }
 
+    // Reverse the rows in the transposed matrix
     for (int i = 0; i < n; i++) {
       for (int j = 0; j < n / 2; j++) {
         int temp = matrix[i][j];
