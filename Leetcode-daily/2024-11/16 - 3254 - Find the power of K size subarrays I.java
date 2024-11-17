@@ -35,7 +35,9 @@
 // 1 <= nums[i] <= 105
 // 1 <= k <= n
 
+import java.util.ArrayDeque;
 import java.util.Arrays;
+import java.util.Deque;
 
 class Solution {
 
@@ -80,6 +82,41 @@ class Solution {
 
       i++;
       j++;
+    }
+
+    return res;
+  }
+
+  // Deque Approach
+  // SC: O(k)
+  public int[] resultsArray_Deque(int[] nums, int k) {
+    int len = nums.length;
+    int[] res = new int[len - k + 1];
+    int j = 0;
+
+    Deque<Integer> dq = new ArrayDeque<>();
+
+    for (int i = 0; i < len; i++) {
+      if (dq.size() == k) {
+        dq.removeFirst();
+      }
+
+      if (!dq.isEmpty() && dq.getLast() + 1 != nums[i]) {
+        dq.clear();
+      }
+
+      dq.add(nums[i]);
+
+      // only when we have window size
+      if (i >= k-1) {
+        if (dq.size() == k) {
+          res[j] = dq.getLast();
+        }
+        else {
+          res[j] = -1;
+        }
+        j++;
+      }
     }
 
     return res;
