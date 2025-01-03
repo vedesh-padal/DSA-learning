@@ -13,7 +13,7 @@ class Pair {
 }
 
 public class NumDistictIslands {
-  private void dfs(int ro, int co, boolean[][] vis, char[][] grid) {
+  private void bfs(int ro, int co, boolean[][] vis, char[][] grid) {
     vis[ro][co] = true;
     int n = grid.length, m = grid[0].length;
     Queue<Pair> q = new LinkedList<>();
@@ -51,7 +51,7 @@ public class NumDistictIslands {
       for (int col = 0; col < m; col++) {
         if (vis[row][col] == false && grid[row][col] == '1') { // if the current position is not visited before and if it is a land
           cnt++;
-          dfs(row, col, vis, grid);
+          bfs(row, col, vis, grid);
         }
       }
     }
