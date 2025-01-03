@@ -7,6 +7,14 @@ class Solution {
     while (low <= high) {
       int mid = (low + high) / 2;
 
+      // search space is already sorted
+      // then arr[low] will always be
+      // the minimum in that search space:
+      if (nums[low] <= nums[high]) {
+        min = Math.min(min, nums[low]);
+        break;
+      }
+
       // if left half is sorted
       if (nums[low] <= nums[mid]) {
         // pick the left most from left sorted - becoz min. and neglect the left half
