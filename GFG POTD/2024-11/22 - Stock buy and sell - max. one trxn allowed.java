@@ -35,6 +35,7 @@ class Solution {
             return 0;
         }
         int maxProfit = 0;
+        
         int buyAt = prices[0];
 
         for (int i = 1; i < prices.length; i++) {
