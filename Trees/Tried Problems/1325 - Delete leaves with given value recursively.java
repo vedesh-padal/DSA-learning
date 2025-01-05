@@ -8,7 +8,7 @@
 // becomes a leaf node and has the value target, it should also be deleted (you
 // need to continue doing that until you cannot).
 
-import trees.TreeNode;
+import trees.bst.TreeNode;
 
 class Solution {
 
