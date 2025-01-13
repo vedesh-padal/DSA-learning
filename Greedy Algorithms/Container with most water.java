@@ -27,9 +27,10 @@
 
 
 class Solution {
+  // ALSO, GFG POTD 13-01-2025
   public int maxArea(int[] height) {
     int l = 0, r = height.length - 1;
-    int maxWater = Integer.MIN_VALUE;
+    int maxWater = Integer.MIN_VALUE; // if n lower bound is 1, then we have to init with 0, so that we dont return INT_MIN
 
     while (l < r) {
       int water = (r - l) * Math.min(height[l], height[r]);
