@@ -46,6 +46,25 @@ class Solution {
 
   private boolean[] isPrime = new boolean[1000]; // given constraint: nums[i] = 1000
 
+  // TC: O(sqrt(n))
+  @SuppressWarnings("unused")
+  private boolean checkIsPrime(int n) {
+    if (n <= 1)
+      return false;
+    if (n <= 3)
+      return true;
+
+    if (n%2 == 0 || n%3 == 0)
+      return false;
+
+    // dry running and cross checking, you will appreciate this logic
+    for (int i = 5; i*i <= n; i += 6) {
+      if (n % i == 0 || n % (i+2) == 0)
+        return false;
+    }
+    return true;
+  }
+
   // Implementing Sieve of Eratosthenes
   private void sieve() {
 
